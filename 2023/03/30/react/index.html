@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>react | 仲乔甫的Blog</title><meta name="author" content="仲乔甫"><meta name="copyright" content="仲乔甫"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1.Hello-react1.引入按顺序 1.引入react核心库 2.引入react-dom，用于支持react操作DOM 3.引入babel，用于将jsx转化为js 1234&#x2F;&#x2F;CDN方法引入：	&lt;script crossorigin src&#x3D;&quot;https:&#x2F;&#x2F;unpkg.com&#x2F;react@18&#x2F;umd&#x2F;react.development.js&quot;&gt;&lt;&#x2F;s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react">
+<meta property="og:url" content="http://example.com/2023/03/30/react/index.html">
+<meta property="og:site_name" content="仲乔甫的Blog">
+<meta property="og:description" content="1.Hello-react1.引入按顺序 1.引入react核心库 2.引入react-dom，用于支持react操作DOM 3.引入babel，用于将jsx转化为js 1234&#x2F;&#x2F;CDN方法引入：	&lt;script crossorigin src&#x3D;&quot;https:&#x2F;&#x2F;unpkg.com&#x2F;react@18&#x2F;umd&#x2F;react.development.js&quot;&gt;&lt;&#x2F;s">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/31/ppRGA7n.jpg">
+<meta property="article:published_time" content="2023-03-30T15:32:49.000Z">
+<meta property="article:modified_time" content="2023-03-31T08:05:43.919Z">
+<meta property="article:author" content="仲乔甫">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2023/03/31/ppRGA7n.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/03/30/react/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'react',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-31 16:05:43'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s1.ax1x.com/2023/03/31/ppRGA7n.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="仲乔甫的Blog"><img class="site-icon" src="/img/favicon.png"/><span class="site-name">仲乔甫的Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">react</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-30T15:32:49.000Z" title="发表于 2023-03-30 23:32:49">2023-03-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-31T08:05:43.919Z" title="更新于 2023-03-31 16:05:43">2023-03-31</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="react"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="1-Hello-react"><a href="#1-Hello-react" class="headerlink" title="1.Hello-react"></a>1.Hello-react</h1><h2 id="1-引入"><a href="#1-引入" class="headerlink" title="1.引入"></a>1.引入</h2><p><strong><strong><strong><strong>按顺序</strong></strong></strong></strong></p>
+<p>1.引入react核心库</p>
+<p>2.引入react-dom，用于支持react操作DOM</p>
+<p>3.引入babel，用于将jsx转化为js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//CDN方法引入：</span></span><br><span class="line">	&lt;script crossorigin src=<span class="string">&quot;https://unpkg.com/react@18/umd/react.development.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">crossorigin</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/react-dom@18/umd/react-dom.development.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.19.6/babel.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-创建"><a href="#2-创建" class="headerlink" title="2.创建"></a>2.创建</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/babel&quot;</span>&gt;<span class="comment">/*此处一定要写babel*/</span></span><br><span class="line">        <span class="comment">// 1.创建虚拟DOM</span></span><br><span class="line">        <span class="keyword">const</span> <span class="variable constant_">VDOM</span>=<span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello,React<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">        <span class="comment">// 2.渲染虚拟DOM到页面</span></span><br><span class="line">        <span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(<span class="variable constant_">VDOM</span>,<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;test&#x27;</span>));</span><br><span class="line">    &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="2-虚拟DOM"><a href="#2-虚拟DOM" class="headerlink" title="2.虚拟DOM"></a>2.虚拟DOM</h1><h2 id="1-特性"><a href="#1-特性" class="headerlink" title="1.特性"></a>1.特性</h2><ul>
+<li><p>本质是Object类型的对象</p>
+</li>
+<li><p>虚拟DOM比较“轻”，真实DOM“重”，因为虚拟DOM是React内部在使用，无需真实DOM上那么多属性 </p>
+</li>
+<li><p>虚拟DOM最终会被React转化为真实DOM，呈现在页面上</p>
+</li>
+</ul>
+<h2 id="2-创建-1"><a href="#2-创建-1" class="headerlink" title="2.创建"></a>2.创建</h2><h3 id="1-使用jsx创建"><a href="#1-使用jsx创建" class="headerlink" title="1.使用jsx创建"></a>1.使用jsx创建</h3><p>利用babel将jsx创建的翻译为js语法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//需要引入babel库</span></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">VDOM</span>=(</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">&quot;title&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    	<span class="tag">&lt;<span class="name">span</span>&gt;</span>Hello,react!<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-使用js创建（麻烦，一般不用）"><a href="#2-使用js创建（麻烦，一般不用）" class="headerlink" title="2.使用js创建（麻烦，一般不用）"></a>2.使用js创建（麻烦，一般不用）</h3><p>不必引入babel库</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="variable constant_">VDOM</span>=<span class="title class_">React</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;h1&#x27;</span>,&#123;<span class="attr">id</span>:<span class="string">&quot;title&quot;</span>&#125;,<span class="title class_">React</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;span&#x27;</span>,&#123;&#125;,<span class="string">&#x27;Hello,react!&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="3-jsx语法规则"><a href="#3-jsx语法规则" class="headerlink" title="3. jsx语法规则"></a>3. jsx语法规则</h1><ol>
+<li>定义虚拟DOM时，不要加引号。</li>
+<li>标签中混入JS表达式时要"{{}}"。</li>
+<li>样式的类名指定不要用class，要用className。</li>
+<li>内联样式，要用"style={{key:value}}"的形式去写。</li>
+<li>虚拟DOM中只能有一个根标签</li>
+<li>标签必须闭合。如<input>必须写为<input/></li>
+<li>标签首字母：</li>
+</ol>
+<ul>
+<li>若小写字母开头，则将该标签转为html中的同名元素，若html中无该标签对应的同名元素，则报错。</li>
+<li>若大写字母开头，react就去渲染对应的组件，若组件没有定义，则报错。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//style</span></span><br><span class="line">.<span class="property">title</span>&#123;</span><br><span class="line">    background-<span class="attr">color</span>: #<span class="number">666</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//script</span></span><br><span class="line"><span class="keyword">const</span> myId=<span class="string">&#x27;aBCd&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> myData=<span class="string">&#x27;Hello,React&#x27;</span>;</span><br><span class="line">    <span class="comment">// 1.创建虚拟DOM</span></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">VDOM</span>=(</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">className</span>=<span class="string">&#x27;title&#x27;</span> <span class="attr">id</span>=<span class="string">&#123;myId.toLowerCase()&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">   		 <span class="tag">&lt;<span class="name">span</span> &gt;</span>&#123;myData&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">)</span><br><span class="line"><span class="comment">// 2.渲染虚拟DOM到页面</span></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(<span class="variable constant_">VDOM</span>,<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;test&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="4-jsx小练习"><a href="#4-jsx小练习" class="headerlink" title="4.jsx小练习"></a>4.jsx小练习</h1><blockquote>
+<p>注意区分【js语句（代码）】与 【js表达式】</p>
+</blockquote>
+<ul>
+<li><p>&#x3D;&#x3D;表达式&#x3D;&#x3D;：一个表达式会产生一个值，可以放在任何一个需要值的地方</p>
+<p>   下面都是表达式:</p>
+<ul>
+<li>a</li>
+<li>a+b</li>
+<li>demo(1)</li>
+<li>arr.map()</li>
+<li>function test(){}</li>
+</ul>
+</li>
+<li><p>&#x3D;&#x3D;语句（代码）&#x3D;&#x3D;</p>
+<ul>
+<li><p>if（）{}</p>
+</li>
+<li><p>for（）{}</p>
+</li>
+<li><p>switch（）{case：xxx}</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">const</span> data=[<span class="string">&#x27;Angular&#x27;</span>,<span class="string">&#x27;React&#x27;</span>,<span class="string">&#x27;Vue&#x27;</span>]</span><br><span class="line"> </span><br><span class="line"> <span class="keyword">const</span> <span class="variable constant_">VDOM</span>=(</span><br><span class="line">     <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">         <span class="tag">&lt;<span class="name">h1</span>&gt;</span>前端框架<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">         <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">         &#123;</span></span><br><span class="line"><span class="language-xml">             data.map((item,index)=&gt;&#123;</span></span><br><span class="line"><span class="language-xml">       	     	return <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">     		 &#125;)</span></span><br><span class="line"><span class="language-xml">   		 &#125;    </span></span><br><span class="line"><span class="language-xml">    	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="5-函数式组件"><a href="#5-函数式组件" class="headerlink" title="5.函数式组件"></a>5.函数式组件</h1><ul>
+<li><p>&#x3D;&#x3D;名称首字母一定要大写&#x3D;&#x3D;</p>
+</li>
+<li><p>&#x3D;&#x3D;注意标签闭合&#x3D;&#x3D;</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.创建函数式组件</span></span><br><span class="line"><span class="comment">//注意名称首字母一定要大写</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Demo</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);<span class="comment">//此处的this是undefined，因为babel编译后开启了严格模式</span></span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>我是函数定义的组件<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//2.渲染组件到页面</span></span><br><span class="line"><span class="comment">//注意标签闭合</span></span><br><span class="line"><span class="title class_">ReactDom</span>.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Demo</span>/&gt;</span></span>,<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;test&#x27;</span>));</span><br><span class="line"><span class="comment">//执行了render之后，发生了什么？</span></span><br><span class="line"><span class="comment">//1.React解析组件标签，找到了Demo组件</span></span><br><span class="line"><span class="comment">//2.发现组件是使用函数定义的，随后调用该函数，将返回的虚拟DOM转化为真实DOM，随后呈现在页面上</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="6-复习——类的基本知识"><a href="#6-复习——类的基本知识" class="headerlink" title="6.复习——类的基本知识"></a>6.复习——类的基本知识</h1><p>总结：</p>
+<ol>
+<li><p>类中的构造器不是必须写的，要对实例进行一些初始化的操作，如添加指定属性时才写。</p>
+</li>
+<li><p>如果A类继承了B类，且A类中写了构造器，那么A类构造器中的super是必须要调用的。</p>
+</li>
+<li><p>类中所定义的方法，都是放在了类的原型对象上，供实例去使用</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建一个Person类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">    <span class="comment">//构造器方法</span></span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name,age</span>)&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span>=name,</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">age</span>=age</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//一般方法</span></span><br><span class="line">    <span class="title function_">speak</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="comment">//speak方法放在了哪里？--类的原型对象上，供实例使用</span></span><br><span class="line">        <span class="comment">//通过Person实例调用，speak中的this就是Person的实例对象 </span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`我叫<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>,我年龄是<span class="subst">$&#123;<span class="variable language_">this</span>.age&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建一个Student类，继承于Person类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Person</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name,age,grade</span>)&#123;</span><br><span class="line">        <span class="comment">//继承必须写super</span></span><br><span class="line">        <span class="variable language_">super</span>(name,age),</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">grade</span>=grade</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">speak</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`我叫<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span>,我年龄是<span class="subst">$&#123;<span class="variable language_">this</span>.age&#125;</span>,我读的是<span class="subst">$&#123;<span class="variable language_">this</span>.grade&#125;</span>年级`</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="7-类式组件"><a href="#7-类式组件" class="headerlink" title="7.类式组件"></a>7.类式组件</h1></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">仲乔甫</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/03/30/react/">http://example.com/2023/03/30/react/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">仲乔甫的Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s1.ax1x.com/2023/03/31/ppRGA7n.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2023/03/30/ReactRouter6%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/" title="React Router 6 快速上手"><img class="cover" src="https://s1.ax1x.com/2023/03/31/ppRGFmj.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">React Router 6 快速上手</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">仲乔甫</div><div class="author-info__description">欢迎来到我的世界</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zqf1120qr" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://gitee.com/zqf1120qr" target="_blank" title="Gitee"><i class="fa-solid fa-g"></i></a><a class="social-icon" href="mailto:1050705358@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Hello-react"><span class="toc-number">1.</span> <span class="toc-text">1.Hello-react</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BC%95%E5%85%A5"><span class="toc-number">1.1.</span> <span class="toc-text">1.引入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.</span> <span class="toc-text">2.创建</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E8%99%9A%E6%8B%9FDOM"><span class="toc-number">2.</span> <span class="toc-text">2.虚拟DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%89%B9%E6%80%A7"><span class="toc-number">2.1.</span> <span class="toc-text">1.特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA-1"><span class="toc-number">2.2.</span> <span class="toc-text">2.创建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8jsx%E5%88%9B%E5%BB%BA"><span class="toc-number">2.2.1.</span> <span class="toc-text">1.使用jsx创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8js%E5%88%9B%E5%BB%BA%EF%BC%88%E9%BA%BB%E7%83%A6%EF%BC%8C%E4%B8%80%E8%88%AC%E4%B8%8D%E7%94%A8%EF%BC%89"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.使用js创建（麻烦，一般不用）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-jsx%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99"><span class="toc-number">3.</span> <span class="toc-text">3. jsx语法规则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-jsx%E5%B0%8F%E7%BB%83%E4%B9%A0"><span class="toc-number">4.</span> <span class="toc-text">4.jsx小练习</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">5.函数式组件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E7%B1%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="toc-number">6.</span> <span class="toc-text">6.复习——类的基本知识</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E7%B1%BB%E5%BC%8F%E7%BB%84%E4%BB%B6"><span class="toc-number">7.</span> <span class="toc-text">7.类式组件</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/03/30/Ajax/" title="Ajax"><img src="https://s1.ax1x.com/2023/03/31/ppRGPXQ.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ajax"/></a><div class="content"><a class="title" href="/2023/03/30/Ajax/" title="Ajax">Ajax</a><time datetime="2023-03-30T15:32:49.000Z" title="发表于 2023-03-30 23:32:49">2023-03-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/30/Javascript/" title="JavaScript"><img src="https://s1.ax1x.com/2023/03/31/ppR8NLj.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaScript"/></a><div class="content"><a class="title" href="/2023/03/30/Javascript/" title="JavaScript">JavaScript</a><time datetime="2023-03-30T15:32:49.000Z" title="发表于 2023-03-30 23:32:49">2023-03-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/30/ES6/" title="ES6"><img src="https://s1.ax1x.com/2023/03/31/ppRGk0s.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ES6"/></a><div class="content"><a class="title" href="/2023/03/30/ES6/" title="ES6">ES6</a><time datetime="2023-03-30T15:32:49.000Z" title="发表于 2023-03-30 23:32:49">2023-03-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/30/ReactRouter6%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/" title="React Router 6 快速上手"><img src="https://s1.ax1x.com/2023/03/31/ppRGFmj.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="React Router 6 快速上手"/></a><div class="content"><a class="title" href="/2023/03/30/ReactRouter6%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/" title="React Router 6 快速上手">React Router 6 快速上手</a><time datetime="2023-03-30T15:32:49.000Z" title="发表于 2023-03-30 23:32:49">2023-03-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/30/react/" title="react"><img src="https://s1.ax1x.com/2023/03/31/ppRGA7n.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="react"/></a><div class="content"><a class="title" href="/2023/03/30/react/" title="react">react</a><time datetime="2023-03-30T15:32:49.000Z" title="发表于 2023-03-30 23:32:49">2023-03-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 仲乔甫</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
